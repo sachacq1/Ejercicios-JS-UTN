@@ -10,13 +10,18 @@ $form.addEventListener("submit", (e) => {
     const $puntuacion = document.getElementById("score");
 
     if ($puntuacion.value >= 90) {
-        console.log(`${$nombre.value} tu calificaion es A`)
-        $respuesta.innerHTML = (`${$nombre.value} tu calificaion es A`)
+        console.log(`${$nombre.value} obtuvo A`)
+        $respuesta.innerHTML = `${$nombre.value} tu calificaion es <strong>A</strong>`
+        const $strongA = $respuesta.querySelector("strong");
+        $strongA.style.color = "green";
 
     }
     else if ($puntuacion.value >= 80 && $puntuacion.value <= 89) {
-        $respuesta.innerHTML = (`${$nombre.value} tu calificaion es B`)
+        $respuesta.innerHTML = `${$nombre.value} tu calificaion es <strong>B</strong>`
         console.log(`${$nombre.value} tu calificaion es B`)
+
+        const $strongB = $respuesta.querySelector("strong");
+        $strongB.style.color = "green";
     }
 
     else if ($puntuacion.value >= 70 && $puntuacion.value <= 79) {
@@ -39,6 +44,6 @@ $form.addEventListener("submit", (e) => {
         console.log(`${$nombre.value} tu calificaion es F`)
     }
 
-});
+})
 
 $form.reset();
